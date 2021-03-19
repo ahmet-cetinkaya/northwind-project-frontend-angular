@@ -6,6 +6,22 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<div class="d-flex my-3">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying products containing <strong>{{ filterText }}</strong
+  >.
+</div>
+
 <table *ngIf="dataLoaded == true" class="table">
   <thead>
     <tr>
@@ -13,16 +29,20 @@
       <th>Product Name</th>
       <th>Category</th>
       <th>Unit Price</th>
+      <th>+VAT</th>
       <th>Unit in Stock</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | filterProduct: filterText">
       <td>{{ product.productId }}</td>
-      <td>{{ product.productName }}</td>
+      <td>{{ product.productName | uppercase }}</td>
       <td>{{ product.categoryId }}</td>
-      <td>{{ product.unitPrice }}</td>
+      <td>{{ product.unitPrice | currency }}</td>
+      <td>{{ product.unitPrice | vatAdded: 10 | currency }}</td>
       <td>{{ product.unitsInStock }}</td>
+      <td><button class="btn btn-success">Add to Card</button></td>
     </tr>
   </tbody>
 </table>
