@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { ListResponseModel } from '../models/listResponseModel';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { ResponseModel } from '../models/responseModel';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,15 +16,15 @@ export class ProductService {
 
   getProducts(): Observable<ListResponseModel<Product>> {
     return this.httpClient.get<ListResponseModel<Product>>(
-      `${this.apiControllerUrl}/getall`
+      this.apiControllerUrl
     );
   }
 
   getProductsByCategory(
-    categoryId: number
+    categoryID: number
   ): Observable<ListResponseModel<Product>> {
     return this.httpClient.get<ListResponseModel<Product>>(
-      `${this.apiControllerUrl}/getbycategory?categoryId=${categoryId}`
+      `${this.apiControllerUrl}/getbycategory?categoryID=${categoryID}`
     );
   }
 

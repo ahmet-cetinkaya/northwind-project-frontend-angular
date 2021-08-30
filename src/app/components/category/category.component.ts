@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Category } from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -28,7 +29,7 @@ export class CategoryComponent implements OnInit {
   }
 
   isActive(category?: Category): string {
-    return this.currentCategory?.categoryId == category?.categoryId
+    return this.currentCategory?.categoryID == category?.categoryID
       ? 'active'
       : '';
   }

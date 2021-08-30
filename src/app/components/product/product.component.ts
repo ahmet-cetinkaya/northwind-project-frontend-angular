@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product',
@@ -24,8 +25,8 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['categoryId'])
-        this.getProductsByCategory(params['categoryId']);
+      if (params['categoryID'])
+        this.getProductsByCategory(params['categoryID']);
       else this.getProducts();
     });
   }
@@ -37,9 +38,9 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  getProductsByCategory(categoryId: number) {
+  getProductsByCategory(categoryID: number) {
     this.productService
-      .getProductsByCategory(categoryId)
+      .getProductsByCategory(categoryID)
       .subscribe((response) => {
         this.products = response.data;
         this.dataLoaded = true;

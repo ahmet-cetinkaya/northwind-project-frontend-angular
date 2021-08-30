@@ -1,7 +1,12 @@
-export interface Product{
-    productId: number;
-    categoryId: number;
-    productName: string;
-    unitsInStock: number;
-    unitPrice: number;
+export interface Product {
+  productID: number;
+  productName: string;
+  supplierID: number;
+  categoryID: number;
+  quantityPerUnit: string;
+  unitPrice: number;
+  unitsInStock: number;
+  unitsOnOrder: number;
+  reorderLevel: number;
+  discontinued: boolean;
 }

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormGroup,
   FormBuilder,
   FormControl,
+  FormGroup,
   Validators,
 } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-add',
@@ -32,7 +33,7 @@ export class ProductAddComponent implements OnInit {
       productName: ['', Validators.required],
       unitPrice: ['', Validators.required],
       unitsInStock: ['', Validators.required],
-      categoryId: ['', Validators.required],
+      categoryID: ['', Validators.required],
     });
   }
 
