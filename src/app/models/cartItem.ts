@@ -1,6 +1,6 @@
-import { Product } from './product';
+import Product from './product';
 
-export class CartItem {
+export default class CartItem {
   product: Product;
   quantity: number;
 

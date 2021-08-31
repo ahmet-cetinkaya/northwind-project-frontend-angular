@@ -1,0 +1,39 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying order details containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Product ID</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let orderDetail of orderDetails | filter: filterText:'OrderID'"
+        (click)="editOrderDetail(orderDetail)"
+      >
+        <td>{{ orderDetail.OrderID }}</td>
+        <td>{{ orderDetail.ProductID }}</td>
+        <td>{{ orderDetail.UnitPrice }}</td>
+        <td>{{ orderDetail.Quantity }}</td>
+        <td>{{ orderDetail.Discount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

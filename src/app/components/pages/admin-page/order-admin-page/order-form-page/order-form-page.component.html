@@ -1,0 +1,166 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Order</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="orderForm">
+      <div class="form-group mb-3">
+        <label for="CustomerID-input">Customer ID</label>
+        <input
+          type="text"
+          id="CustomerID-input"
+          formControlName="CustomerID"
+          class="form-control"
+          placeholder="Enter CustomerID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="EmployeeID-input">Employee ID</label>
+        <input
+          type="number"
+          id="EmployeeID-input"
+          formControlName="EmployeeID"
+          class="form-control"
+          placeholder="Enter EmployeeID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="OrderDate-input">Order Date</label>
+        <input
+          type="date"
+          id="OrderDate-input"
+          formControlName="OrderDate"
+          class="form-control"
+          placeholder="Enter OrderDate"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="RequiredDate-input">Required Date</label>
+        <input
+          type="date"
+          id="RequiredDate-input"
+          formControlName="RequiredDate"
+          class="form-control"
+          placeholder="Enter Required Date"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShippedDate-input">Shipped Date</label>
+        <input
+          type="date"
+          id="ShippedDate-input"
+          formControlName="ShippedDate"
+          class="form-control"
+          placeholder="Enter ShippedDate"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipVia-input">Ship Via</label>
+        <input
+          type="number"
+          id="ShipVia-input"
+          formControlName="ShipVia"
+          class="form-control"
+          placeholder="Enter Ship Via"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="CustomerID-input">CustomerID</label>
+        <input
+          type="number"
+          id="CustomerID-input"
+          formControlName="CustomerID"
+          class="form-control"
+          placeholder="Enter CustomerID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Freight-input">Freight</label>
+        <input
+          type="number"
+          id="Freight-input"
+          formControlName="Freight"
+          class="form-control"
+          placeholder="Enter Freight"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipName-input">Ship Name</label>
+        <input
+          type="text"
+          id="ShipName-input"
+          formControlName="ShipName"
+          class="form-control"
+          placeholder="Enter Ship Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipAddress-input">Ship Address</label>
+        <input
+          type="text"
+          id="ShipAddress-input"
+          formControlName="ShipAddress"
+          class="form-control"
+          placeholder="Enter Ship Address"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="CustomerID-input">Ship City</label>
+        <input
+          type="text"
+          id="ShipCity-input"
+          formControlName="ShipCity"
+          class="form-control"
+          placeholder="Enter Ship City"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipRegion-input">Ship Region</label>
+        <input
+          type="text"
+          id="ShipRegion-input"
+          formControlName="ShipRegion"
+          class="form-control"
+          placeholder="Enter Ship Region"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipPostalCode-input">Ship Postal Code</label>
+        <input
+          type="text"
+          id="ShipPostalCode-input"
+          formControlName="ShipPostalCode"
+          class="form-control"
+          placeholder="Enter Ship Postal Code"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ShipCountry-input">Ship Country</label>
+        <input
+          type="text"
+          id="ShipCountry-input"
+          formControlName="ShipCountry"
+          class="form-control"
+          placeholder="Enter Ship Country"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="order === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

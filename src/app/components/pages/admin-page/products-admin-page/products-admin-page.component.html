@@ -1,0 +1,56 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying products containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Supplier ID</th>
+        <th>Category ID</th>
+        <th>Quantity Per Unit</th>
+        <th>Unit Price</th>
+        <th>Unit in Stock</th>
+        <th>Units On Order</th>
+        <th>Reorder Level</th>
+        <th>Discontinued</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let product of products | filter: filterText:'ProductName'"
+        (click)="editProduct(product)"
+      >
+        <td>{{ product.ProductID }}</td>
+        <td>{{ product.ProductName | uppercase }}</td>
+        <td>{{ product.CategoryID }}</td>
+        <td>{{ product.SupplierID }}</td>
+        <td>{{ product.QuantityPerUnit }}</td>
+        <td>{{ product.UnitPrice | currency }}</td>
+        <td>{{ product.UnitsInStock }}</td>
+        <td>{{ product.UnitsOnOrder }}</td>
+        <td>{{ product.ReorderLevel }}</td>
+        <td>
+          <input
+            type="checkbox"
+            class="form-check-input"
+            disabled
+            [checked]="product.Discontinued"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

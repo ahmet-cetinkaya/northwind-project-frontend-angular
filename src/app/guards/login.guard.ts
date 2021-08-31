@@ -12,7 +12,7 @@ import { AuthService } from '../services/auth.service';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { ToastrService } from 'ngx-toastr';
-import { UserTokenModel } from '../models/userTokenModel';
+import UserTokenModel from '../models/userTokenModel';
 
 @Injectable({
   providedIn: 'root',

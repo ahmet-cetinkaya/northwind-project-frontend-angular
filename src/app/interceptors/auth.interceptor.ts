@@ -5,7 +5,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 
-import { AccessTokenModel } from '../models/accessTokenModel';
+import AccessTokenModel from '../models/accessTokenModel';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { Observable } from 'rxjs';
@@ -24,7 +24,7 @@ export class AuthInterceptor implements HttpInterceptor {
     let newRequest: HttpRequest<any> = request.clone({
       headers: request.headers.set(
         'Authorization',
-        `Bearer ${tokenModel?.token}`
+        `Bearer ${tokenModel?.Token}`
       ),
     });
 

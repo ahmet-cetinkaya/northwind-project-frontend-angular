@@ -1,0 +1,117 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Product</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="productForm">
+      <div class="form-group mb-3">
+        <label for="product-name-input">Product Name</label>
+        <input
+          type="text"
+          id="product-name-input"
+          formControlName="ProductName"
+          class="form-control"
+          placeholder="Enter Product Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="supplier-id-input">Supplier ID</label>
+        <input
+          type="number"
+          id="supplier-id-input"
+          formControlName="SupplierID"
+          class="form-control"
+          placeholder="Enter Supplier ID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="category-id-input">Category ID</label>
+        <input
+          type="number"
+          id="category-id-input"
+          formControlName="CategoryID"
+          class="form-control"
+          placeholder="Enter Category ID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="quantity-per-unit-input">Quantity Per Unit</label>
+        <input
+          type="text"
+          id="quantity-per-unit-input"
+          formControlName="QuantityPerUnit"
+          class="form-control"
+          placeholder="Enter Quantity Per Unit"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="unit-price-input">Unit Price</label>
+        <input
+          type="number"
+          id="unit-price-input"
+          formControlName="UnitPrice"
+          class="form-control"
+          placeholder="Enter Unit Price"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="units-in-stock-input">Units In Stock</label>
+        <input
+          type="number"
+          id="units-in-stock-input"
+          formControlName="UnitsInStock"
+          class="form-control"
+          placeholder="Enter Units In Stock"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="units-on-order-input">Units On Order</label>
+        <input
+          type="number"
+          id="units-on-order-input"
+          formControlName="UnitsOnOrder"
+          class="form-control"
+          placeholder="Enter Units On Order"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="reorder-level-input">Reorder Level</label>
+        <input
+          type="number"
+          id="reorder-level-input"
+          formControlName="ReorderLevel"
+          class="form-control"
+          placeholder="Enter Reorder Level"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label class="form-check-label" for="discontinued-input">
+          Discontinued
+        </label>
+        <input
+          type="checkbox"
+          formControlName="Discontinued"
+          id="discontinued-input"
+          class="form-check-input ms-2"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="product === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

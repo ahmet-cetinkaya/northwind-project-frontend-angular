@@ -1,0 +1,233 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul id="adminMenu" class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'categories' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'categories' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/categories/"
+            (click)="setActiveMenu('categories')"
+            >Categories</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/categories/add"
+            (click)="setActiveMenu('categories')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'customers' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'customers' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/customers/"
+            (click)="setActiveMenu('customers')"
+            >Customers</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/customers/add"
+            (click)="setActiveMenu('customers')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'employees' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'employees' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/employees/"
+            (click)="setActiveMenu('employees')"
+            >Employees</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/employees/add"
+            (click)="setActiveMenu('employees')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'employeesterritories' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'employeesterritories' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/employeesterritories/"
+            (click)="setActiveMenu('employeesterritories')"
+            >Employees Territories</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/employeesterritories/add"
+            (click)="setActiveMenu('employeesterritories')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'orders' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'orders' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/orders/"
+            (click)="setActiveMenu('orders')"
+            >Orders</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/orders/add"
+            (click)="setActiveMenu('orders')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'orderdetails' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'orderdetails' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/orderdetails/"
+            (click)="setActiveMenu('orderdetails')"
+            >Order Details</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/orderdetails/add"
+            (click)="setActiveMenu('orderdetails')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'products' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'products' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/products/"
+            (click)="setActiveMenu('products')"
+            >Products</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/products/add"
+            (click)="setActiveMenu('products')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'regions' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'regions' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/regions/"
+            (click)="setActiveMenu('regions')"
+            >Regions</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/regions/add"
+            (click)="setActiveMenu('regions')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'shippers' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'shippers' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/shippers/"
+            (click)="setActiveMenu('shippers')"
+            >Shippers</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/shippers/add"
+            (click)="setActiveMenu('shippers')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'suppliers' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'suppliers' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/suppliers/"
+            (click)="setActiveMenu('suppliers')"
+            >Suppliers</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/suppliers/add"
+            (click)="setActiveMenu('suppliers')"
+            >Add</a
+          >
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center {{
+            activeMenu == 'territories' ? 'active' : ''
+          }}"
+        >
+          <a
+            class="btn text-start w-100 text-{{
+              activeMenu == 'territories' ? 'white' : 'black'
+            }}"
+            routerLink="/admin/territories/"
+            (click)="setActiveMenu('territories')"
+            >Territories</a
+          >
+          <a
+            class="btn btn-info text-white"
+            routerLink="/admin/territories/add"
+            (click)="setActiveMenu('territories')"
+            >Add</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

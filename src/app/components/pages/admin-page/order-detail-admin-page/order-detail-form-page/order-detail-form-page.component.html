@@ -1,0 +1,76 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Order Detail</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="orderDetailForm">
+      <div class="form-group mb-3">
+        <label for="OrderID-input">Order ID</label>
+        <input
+          type="number"
+          id="OrderID-input"
+          formControlName="OrderID"
+          class="form-control"
+          placeholder="Enter OrderID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="OrderID-input">Order ID</label>
+        <input
+          type="number"
+          id="OrderID-input"
+          formControlName="OrderID"
+          class="form-control"
+          placeholder="Enter Order ID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="UnitPrice-input">UnitPrice</label>
+        <input
+          type="number"
+          id="UnitPrice-input"
+          formControlName="UnitPrice"
+          class="form-control"
+          placeholder="Enter UnitPrice"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Quantity-input">Quantity</label>
+        <input
+          type="number"
+          id="Quantity-input"
+          formControlName="Quantity"
+          class="form-control"
+          placeholder="Enter Quantity"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Discount-input">Discount</label>
+        <input
+          type="number"
+          id="Discount-input"
+          formControlName="Discount"
+          class="form-control"
+          placeholder="Enter Discount"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="orderDetail === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

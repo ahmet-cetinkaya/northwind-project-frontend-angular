@@ -1,0 +1,63 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying employees containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Title</th>
+        <th>Title Of Courtesy</th>
+        <th>Birth Date</th>
+        <th>Hire Date</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+        <th>Home Phone</th>
+        <th>Extension</th>
+        <th>Notes</th>
+        <th>Reports To</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let employee of employees | filter: filterText:'FirstName'"
+        (click)="editEmployee(employee)"
+      >
+        <td>{{ employee.EmployeeID }}</td>
+        <td>{{ employee.FirstName }}</td>
+        <td>{{ employee.LastName }}</td>
+        <td>{{ employee.Title }}</td>
+        <td>{{ employee.TitleOfCourtesy }}</td>
+        <td>{{ employee.BirthDate }}</td>
+        <td>{{ employee.HireDate }}</td>
+        <td>{{ employee.Address }}</td>
+        <td>{{ employee.City }}</td>
+        <td>{{ employee.Region }}</td>
+        <td>{{ employee.PostalCode }}</td>
+        <td>{{ employee.Country }}</td>
+        <td>{{ employee.HomePhone }}</td>
+        <td>{{ employee.Extension }}</td>
+        <td>{{ employee.Notes }}</td>
+        <td>{{ employee.ReportsTo }}</td>
+        <td>{{ employee.Salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -11,10 +11,15 @@
   <ul class="dropdown-menu" aria-labelledby="cartDropdown">
     <li *ngFor="let cartItem of cartItems">
       <div
-        class="dropdown-item d-flex align-content-center justify-content-between"
+        class="
+          dropdown-item
+          d-flex
+          align-content-center
+          justify-content-between
+        "
       >
         <div>
-          {{ cartItem.product.productName }}
+          {{ cartItem.product.ProductName }}
           <span class="badge bg-secondary">{{ cartItem.quantity }}</span>
         </div>
         <button

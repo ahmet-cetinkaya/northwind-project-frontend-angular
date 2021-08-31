@@ -1,0 +1,53 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying suppliers containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+        <th>Contact Title</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Region</th>
+        <th>Postal Code</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th>Fax</th>
+        <th>HomePage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let supplier of suppliers | filter: filterText:'CompanyName'"
+        (click)="editSupplier(supplier)"
+      >
+        <td>{{ supplier.SupplierID }}</td>
+        <td>{{ supplier.CompanyName }}</td>
+        <td>{{ supplier.ContactName }}</td>
+        <td>{{ supplier.ContactTitle }}</td>
+        <td>{{ supplier.Address }}</td>
+        <td>{{ supplier.City }}</td>
+        <td>{{ supplier.Region }}</td>
+        <td>{{ supplier.PostalCode }}</td>
+        <td>{{ supplier.Country }}</td>
+        <td>{{ supplier.Phone }}</td>
+        <td>{{ supplier.Fax }}</td>
+        <td>{{ supplier.HomePage }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

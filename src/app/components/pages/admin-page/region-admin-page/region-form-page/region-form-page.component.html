@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Product</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="regionForm">
+      <div class="form-group mb-3">
+        <label for="RegionDescription-input">Description</label>
+        <input
+          type="text"
+          id="RegionDescription-input"
+          formControlName="RegionDescription"
+          class="form-control"
+          placeholder="Enter Region Description"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="region === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

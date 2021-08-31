@@ -1,0 +1,35 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying categories containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let category of categories | filter: filterText:'CategoryName'"
+        (click)="editCategory(category)"
+      >
+        <td>{{ category.CategoryID }}</td>
+        <td>{{ category.CategoryName }}</td>
+        <td>{{ category.Description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,8 +1,8 @@
-import { AccessTokenModel } from './accessTokenModel';
-import { User } from './user';
+import AccessTokenModel from './accessTokenModel';
+import User from './user';
 
-export interface UserTokenModel {
-  user: User;
-  userRoles: string[];
+export default interface UserTokenModel {
+  User: User;
+  UserRoles: string[];
   accessToken: AccessTokenModel;
 }

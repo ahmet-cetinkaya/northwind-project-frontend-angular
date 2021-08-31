@@ -8,7 +8,7 @@ import {
 
 import { AuthService } from 'src/app/services/auth.service';
 import { LocalStorageService } from './../../services/local-storage.service';
-import { LoginModel } from 'src/app/models/loginModel';
+import LoginModel from 'src/app/models/loginModel';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -45,9 +45,9 @@ export class LoginComponent implements OnInit {
     let loginModel: LoginModel = { ...this.loginForm.value };
     this.authService.login(loginModel).subscribe(
       (response) => {
-        if (response.message) this.toastrService.success(response.message);
-        this.localStorageService.set('tokenModel', response.data.accessToken);
-        this.authService.setUserToken(response.data);
+        if (response.Message) this.toastrService.success(response.Message);
+        this.localStorageService.set('tokenModel', response.Data.accessToken);
+        this.authService.setUserToken(response.Data);
         this.router.navigateByUrl('');
       },
       (errorResponse) => {

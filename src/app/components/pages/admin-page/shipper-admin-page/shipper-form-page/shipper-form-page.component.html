@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Product</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="shipperForm">
+      <div class="form-group mb-3">
+        <label for="CompanyName-input">Company Name</label>
+        <input
+          type="text"
+          id="CompanyName-input"
+          formControlName="CompanyName"
+          class="form-control"
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Phone-input">Phone</label>
+        <input
+          type="text"
+          id="Phone-input"
+          formControlName="Phone"
+          class="form-control"
+          placeholder="Enter Phone"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="shipper === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

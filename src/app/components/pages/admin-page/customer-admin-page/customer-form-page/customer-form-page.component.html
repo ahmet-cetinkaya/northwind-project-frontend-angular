@@ -1,0 +1,136 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Customer</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="customerForm">
+      <div class="form-group mb-3">
+        <label for="CustomerID-input">Customer ID</label>
+        <input
+          type="text"
+          id="CustomerID-input"
+          formControlName="CustomerID"
+          class="form-control"
+          placeholder="Enter Customer ID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="CompanyName-input">Company Name</label>
+        <input
+          type="text"
+          id="CompanyName-input"
+          formControlName="CompanyName"
+          class="form-control"
+          placeholder="Enter Company Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ContactName-input">Contact Name</label>
+        <input
+          type="text"
+          id="ContactName-input"
+          formControlName="ContactName"
+          class="form-control"
+          placeholder="Enter Contact Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ContactTitle-input">Contact Title</label>
+        <input
+          type="text"
+          id="ContactTitle-input"
+          formControlName="ContactTitle"
+          class="form-control"
+          placeholder="Enter ContactTitle"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Address-input">Address</label>
+        <input
+          type="text"
+          id="Address-input"
+          formControlName="Address"
+          class="form-control"
+          placeholder="Enter Address"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="City-input">City</label>
+        <input
+          type="text"
+          id="City-input"
+          formControlName="City"
+          class="form-control"
+          placeholder="Enter City"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Region-input">Region</label>
+        <input
+          type="text"
+          id="Region-input"
+          formControlName="Region"
+          class="form-control"
+          placeholder="Enter Region"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Phone-input">Postal Code</label>
+        <input
+          type="text"
+          id="PostalCode-input"
+          formControlName="PostalCode"
+          class="form-control"
+          placeholder="Enter Postal Code"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Country-input">Country</label>
+        <input
+          type="text"
+          id="Country-input"
+          formControlName="Country"
+          class="form-control"
+          placeholder="Enter Country"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Phone-input">Phone</label>
+        <input
+          type="text"
+          id="Phone-input"
+          formControlName="Phone"
+          class="form-control"
+          placeholder="Enter Phone"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Fax-input">Fax</label>
+        <input
+          type="text"
+          id="Fax-input"
+          formControlName="Fax"
+          class="form-control"
+          placeholder="Enter Fax"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="customer === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

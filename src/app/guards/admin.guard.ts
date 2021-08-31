@@ -9,7 +9,7 @@ import {
 import { AuthService } from '../services/auth.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserTokenModel } from 'src/app/models/userTokenModel';
+import UserTokenModel from 'src/app/models/userTokenModel';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -28,7 +28,7 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     return this.authService.userToken$.pipe(
       map((userToken) => {
-        return !!userToken && userToken.userRoles.includes('admin');
+        return !!userToken && userToken.UserRoles.includes('admin');
       })
     );
   }

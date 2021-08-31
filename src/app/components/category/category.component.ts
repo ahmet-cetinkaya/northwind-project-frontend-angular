@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Category } from 'src/app/models/category';
+import Category from 'src/app/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -19,8 +19,8 @@ export class CategoryComponent implements OnInit {
   }
 
   getCategories() {
-    this.categoryService.getCategories().subscribe((response) => {
-      this.categories = response.data;
+    this.categoryService.getAll().subscribe((response) => {
+      this.categories = response.Data;
     });
   }
 
@@ -29,7 +29,7 @@ export class CategoryComponent implements OnInit {
   }
 
   isActive(category?: Category): string {
-    return this.currentCategory?.categoryID == category?.categoryID
+    return this.currentCategory?.CategoryID == category?.CategoryID
       ? 'active'
       : '';
   }

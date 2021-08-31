@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Territory</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="territoryForm">
+      <div class="form-group mb-3">
+        <label for="TerritoryID-input">Territory ID</label>
+        <input
+          type="number"
+          id="TerritoryID-input"
+          formControlName="TerritoryID"
+          class="form-control"
+          placeholder="Enter TerritoryID"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="TerritoryDescription-input">Description</label>
+        <input
+          type="text"
+          id="TerritoryDescription-input"
+          formControlName="TerritoryDescription"
+          class="form-control"
+          placeholder="Enter Territory Description"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="RegionID-input">Region ID</label>
+        <input
+          type="number"
+          id="RegionID-input"
+          formControlName="RegionID"
+          class="form-control"
+          placeholder="Enter RegionID"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="territory === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

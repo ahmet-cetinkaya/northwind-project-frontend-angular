@@ -19,9 +19,9 @@ export class AppComponent {
 
   authRefresh() {
     this.authService.refresh().subscribe((response) => {
-      if (!response.success) return;
+      if (!response.Success) return;
 
-      this.authService.loggedIn(response.data);
+      this.authService.loggedIn(response.Data);
     });
   }
 }

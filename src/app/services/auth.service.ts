@@ -1,16 +1,16 @@
 import { deleteUserToken, setUserToken } from '../store/auth/auth.actions';
 
-import { AccessTokenModel } from '../models/accessTokenModel';
+import AccessTokenModel from '../models/accessTokenModel';
 import { AppState } from '../store/app.reducer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
-import { LoginModel } from '../models/loginModel';
+import LoginModel from '../models/loginModel';
 import { Observable } from 'rxjs';
-import { ResponseModel } from '../models/responseModel';
-import { SingleResponseModel } from '../models/singleResponseModel';
+import ResponseModel from '../models/responseModel';
+import SingleResponseModel from '../models/singleResponseModel';
 import { Store } from '@ngrx/store';
-import { UserTokenModel } from '../models/userTokenModel';
+import UserTokenModel from '../models/userTokenModel';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 

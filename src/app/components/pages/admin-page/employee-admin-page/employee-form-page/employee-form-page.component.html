@@ -1,0 +1,186 @@
+<div class="card">
+  <div class="card-header shadow">
+    <h5 class="title">Employee</h5>
+  </div>
+  <div class="card-body shadow">
+    <form [formGroup]="employeeForm">
+      <div class="form-group mb-3">
+        <label for="FirstName-input">First Name</label>
+        <input
+          type="text"
+          id="FirstName-input"
+          formControlName="FirstName"
+          class="form-control"
+          placeholder="Enter First Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="LastName-input">Last Name</label>
+        <input
+          type="text"
+          id="LastName-input"
+          formControlName="LastName"
+          class="form-control"
+          placeholder="Enter Last Name"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Title-input">Title</label>
+        <input
+          type="text"
+          id="Title-input"
+          formControlName="Title"
+          class="form-control"
+          placeholder="Enter Title"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="TitleOfCourtesy-input">Title Of Courtesy</label>
+        <input
+          type="text"
+          id="TitleOfCourtesy-input"
+          formControlName="TitleOfCourtesy"
+          class="form-control"
+          placeholder="Enter TitleOfCourtesy"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="BirthDate-input">Birth Date</label>
+        <input
+          type="text"
+          id="BirthDate-input"
+          formControlName="BirthDate"
+          class="form-control"
+          placeholder="Enter Birth Date"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="HireDate-input">Hire Date</label>
+        <input
+          type="text"
+          id="HireDate-input"
+          formControlName="HireDate"
+          class="form-control"
+          placeholder="Enter HireDate"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Address-input">Address</label>
+        <input
+          type="text"
+          id="Address-input"
+          formControlName="Address"
+          class="form-control"
+          placeholder="Enter Address"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="City-input">City</label>
+        <input
+          type="text"
+          id="City-input"
+          formControlName="City"
+          class="form-control"
+          placeholder="Enter City"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Region-input">Region</label>
+        <input
+          type="text"
+          id="Region-input"
+          formControlName="Region"
+          class="form-control"
+          placeholder="Enter Region"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="PostalCode-input">Postal Code</label>
+        <input
+          type="text"
+          id="PostalCode-input"
+          formControlName="PostalCode"
+          class="form-control"
+          placeholder="Enter Postal Code"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Country-input">Country</label>
+        <input
+          type="text"
+          id="Country-input"
+          formControlName="Country"
+          class="form-control"
+          placeholder="Enter Country"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="HomePhone-input">Home Phone</label>
+        <input
+          type="text"
+          id="HomePhone-input"
+          formControlName="HomePhone"
+          class="form-control"
+          placeholder="Enter Home Phone"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Extension-input">Extension</label>
+        <input
+          type="text"
+          id="Extension-input"
+          formControlName="Extension"
+          class="form-control"
+          placeholder="Enter Extension"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Notes-input">Notes</label>
+        <input
+          type="text"
+          id="Notes-input"
+          formControlName="Notes"
+          class="form-control"
+          placeholder="Enter Notes"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="ReportsTo-input">Reports To</label>
+        <input
+          type="number"
+          id="ReportsTo-input"
+          formControlName="ReportsTo"
+          class="form-control"
+          placeholder="Enter Reports To"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="Salary-input">Salary</label>
+        <input
+          type="number"
+          id="Salary-input"
+          formControlName="Salary"
+          class="form-control"
+          placeholder="Enter Salary"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="card-footer shadow d-flex">
+    <button
+      *ngIf="employee === undefined; else editButton"
+      (click)="add()"
+      class="btn btn-primary w-100 shadow-sm"
+    >
+      Add
+    </button>
+    <ng-template #editButton>
+      <button (click)="edit()" class="btn btn-primary w-100 shadow-sm">
+        Edit
+      </button>
+      <button (click)="delete_()" class="btn btn-danger w-100 shadow-sm">
+        Delete
+      </button>
+    </ng-template>
+  </div>
+</div>

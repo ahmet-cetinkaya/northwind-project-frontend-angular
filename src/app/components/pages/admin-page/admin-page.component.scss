@@ -1,0 +1,12 @@
+:host {
+  #adminMenu {
+    li {
+      cursor: pointer;
+
+      .add-btn {
+        position: relative;
+        z-index: 100;
+      }
+    }
+  }
+}

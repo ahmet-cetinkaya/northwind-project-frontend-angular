@@ -1,0 +1,57 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying orders containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer ID</th>
+        <th>Employee ID</th>
+        <th>Order Date</th>
+        <th>Required Date</th>
+        <th>Shipped Date</th>
+        <th>Ship Via</th>
+        <th>Freight</th>
+        <th>Ship Name</th>
+        <th>Ship Address</th>
+        <th>Ship City</th>
+        <th>Ship Region</th>
+        <th>Ship Postal Code</th>
+        <th>Ship Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let order of orders | filter: filterText:'OrderID'"
+        (click)="editOrder(order)"
+      >
+        <td>{{ order.OrderID }}</td>
+        <td>{{ order.CustomerID }}</td>
+        <td>{{ order.EmployeeID }}</td>
+        <td>{{ order.OrderDate }}</td>
+        <td>{{ order.RequiredDate }}</td>
+        <td>{{ order.ShippedDate }}</td>
+        <td>{{ order.ShipVia }}</td>
+        <td>{{ order.Freight }}</td>
+        <td>{{ order.ShipName }}</td>
+        <td>{{ order.ShipAddress }}</td>
+        <td>{{ order.ShipCity }}</td>
+        <td>{{ order.ShipRegion }}</td>
+        <td>{{ order.ShipPostalCode }}</td>
+        <td>{{ order.ShipCountry }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

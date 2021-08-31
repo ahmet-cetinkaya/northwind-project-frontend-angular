@@ -1,0 +1,36 @@
+<div class="d-flex mb-2">
+  <input
+    [(ngModel)]="filterText"
+    class="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+  />
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+<div *ngIf="filterText" class="alert alert-info">
+  Displaying employee territories containing <strong>{{ filterText }}</strong
+  >.
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Territory ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let employeeTerritory of employeeTerritories
+            | filter: filterText:'EmployeeID'
+        "
+        (click)="editEmployeeTerritory(employeeTerritory)"
+      >
+        <td>{{ employeeTerritory.EmployeeID }}</td>
+        <td>{{ employeeTerritory.TerritoryID }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
